@@ -35,6 +35,7 @@ endpoints:
         - claude-haiku-4-5-20251001
       fetch: true
   agents:
+    sharedGlobal: true
     capabilities:
       - "execute_code"
       - "file_search"
