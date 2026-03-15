@@ -1,0 +1,44 @@
+version: 1.2.7
+
+# Memory - remembers facts about users across conversations
+memory:
+  disabled: false
+  personalize: true
+  tokenLimit: 2000
+  charLimit: 10000
+  messageWindowSize: 5
+  validKeys:
+    - "user_preferences"
+    - "personal_info"
+    - "learned_facts"
+  agent:
+    provider: "openAI"
+    model: "gpt-4o-mini"
+    model_parameters:
+      temperature: 0.2
+
+# Model configuration
+endpoints:
+  openAI:
+    models:
+      default:
+        - gpt-5.4
+        - gpt-5.2
+        - gpt-5.2-chat-latest
+        - gpt-4o-mini
+      fetch: true
+    titleModel: gpt-4o-mini
+  anthropic:
+    models:
+      default:
+        - claude-sonnet-4-5-20250514
+        - claude-haiku-4-5-20251001
+      fetch: true
+  agents:
+    capabilities:
+      - "execute_code"
+      - "file_search"
+      - "tools"
+      - "artifacts"
+      - "web_search"
+      - "ocr"
